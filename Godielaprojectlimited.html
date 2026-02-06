@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godeila Farm - Premium Poultry Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #fef9f3;
+            --brown: #8b6f47;
+            --dark-brown: #5c4a2f;
+            --green: #4a7c59;
+            --dark-green: #2d5016;
+            --orange: #e67e22;
+            --light-orange: #f39c12;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--dark-brown);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Decorative Header */
+        .top-banner {
+            background: linear-gradient(90deg, var(--green), var(--dark-green), var(--green));
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: fadeIn 1s ease;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--orange), var(--light-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+            animation: rotate 3s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        .brand-text h1 {
+            font-size: 2rem;
+            color: var(--dark-green);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .brand-text p {
+            font-size: 0.85rem;
+            color: var(--brown);
+            font-style: italic;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--dark-brown);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::before {
+            content: '🌾';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--orange);
+        }
+
+        .nav-menu a:hover::before {
+            opacity: 1;
+            left: -25px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(74, 124, 89, 0.95), rgba(45, 80, 22, 0.95)), 
+                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%234a7c59" width="100" height="100"/><path d="M50 10L60 30L80 30L65 42L70 60L50 48L30 60L35 42L20 30L40 30Z" fill="%23ffffff" opacity="0.05"/></svg>');
+            background-size: cover;
+            padding: 8rem 5% 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--cream);
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 4.5rem;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInLeft 1s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .hero-content {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            animation: fadeInLeft 1s ease 0.2s backwards;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInLeft 1s ease 0.4s backwards;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .hero-feature span {
+            font-size: 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInLeft 1s ease 0.6s backwards;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--light-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(230, 126, 34, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark-green);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease 0.3s backwards;
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .badge-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .badge {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .badge:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .badge-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge h3 {
+            color: var(--dark-green);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge p {
+            color: var(--brown);
+            font-size: 0.95rem;
+        }
+
+        /* Story Section */
+        .story {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .story-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .story-img {
+            height: 250px;
+            /* background: linear-gradient(135deg, var(--green), var(--orange)); */
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .story-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .story-content {
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section-label {
+            color: var(--orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .story-content h2 {
+            font-size: 3rem;
+            color: var(--dark-green);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--brown);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--cream);
+            border-radius: 15px;
+            border: 2px solid var(--orange);
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--dark-brown);
+            font-weight: 600;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(254, 249, 243, 1), rgba(255, 255, 255, 1));
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--brown);
+            line-height: 1.8;
+        }
+
+        .products-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .product-item {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--orange), var(--light-orange));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .product-item:hover::before {
+            opacity: 0.1;
+        }
+
+        .product-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            height: 280px;
+            background: linear-gradient(135deg, var(--green), var(--dark-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            position: relative;
+        }
+
+        .product-details {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .product-details h3 {
+            font-size: 1.8rem;
+            color: var(--dark-green);
+            margin-bottom: 0.8rem;
+        }
+
+        .product-details p {
+            color: var(--brown);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        .order-btn {
+            background: var(--dark-green);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background: var(--green);
+            transform: scale(1.05);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            background: var(--dark-green);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '❝';
+            position: absolute;
+            font-size: 30rem;
+            color: rgba(255, 255, 255, 0.03);
+            top: -5rem;
+            left: -5rem;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .testimonial-stars {
+            color: var(--light-orange);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+        }
+
+        .contact-info h2 {
+            font-size: 3rem;
+            color: var(--dark-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.15rem;
+            color: var(--brown);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--cream);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+        }
+
+        .contact-item-text h4 {
+            color: var(--dark-green);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item-text p {
+            color: var(--brown);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, var(--green), var(--dark-green));
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .submit{
+            padding: 1rem;
+            border-radius: 12px; 
+            margin-top: 0.5rem;
+        }
+
+        .submit button{
+            font-weight: 600;
+            padding: 1rem 3.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            font-family: inherit;
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .submit button:hover{
+            content: '';
+            transform: translateY(5px);
+            background: var(--dark-green);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .submit button:active{
+            background: #548d2f;
+            transition: all 0.3s ease;
+        }
+
+        .form-group label {
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .footer-brand p {
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-icon:hover {
+            background: var(--orange);
+            transform: translateY(-5px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: var(--orange);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+            /* laptop screen */
+        @media (min-width: 1024px) {
+            .nav-menu {
+                max-width: 100%;
+            }
+            .toggleButton{
+                display: none;
+            }
+            .nav-menu li a{
+                max-width: 100%;
+                margin: 2rem;
+            }
+            body{
+                max-width: 90%;
+            }
+            .hero-container{
+                display: grid;
+                grid-template-columns: auto auto;
+
+            }
+            .hero-features{
+                display: flex;
+                gap: 10px;
+                margin-top: 1.5rem;
+           }
+           .hero-feature{
+               display: grid;
+               grid-template-columns: auto auto;
+               margin-bottom: 1.1rem;
+               max-width: 100%;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        } 
+        /* Tablet screen */
+        @media (min-width: 600px) {
+            .nav-menu {
+                max-width: 100%;
+                justify-content: space-between;
+            }
+            .toggleButton{
+                display: none;
+            }
+            .nav-menu li a{
+                max-width: 100%;
+                color: #000;
+                line-height: 2.5rem;
+                font-size: 1rem;
+                padding: 0.1rem;
+                gap: 0.3rem;
+            }
+            body{
+                max-width: 100%;
+            }
+             
+            .hero-container,
+            .story-container,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h2 {
+                font-size: 3rem;
+            }
+
+            .products-showcase,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        } 
+        /* Mobile screen */
+        @media only screen and (max-width: 600px){
+            body{
+                max-width: 100%;
+                background-color: 100%;
+            }
+            .nav-menu{
+                display: none;
+                position: absolute;
+                width: 100%;
+                background-color: #548d2f;
+                padding: 20px;
+                top: 100%;
+                left: 0%;
+
+            }
+            .nav-menu li a{
+                color: white;
+                margin-bottom: 1rem;
+                line-height: 2.5rem;
+            }
+            .nav-menu.active{
+                display: block;
+            }
+            .toggleButton{
+                display: block;
+                margin-right: 3rem;
+            }
+            .brand{
+                max-width: 50%;
+            }
+            .brand-logo{
+                width: 50px;
+                height: 50px;
+            }
+            .brand-text{
+                max-width: 100%;
+            }
+            .brand-text h1 p{
+                max-width: 100%;
+            }
+            .top-banner{
+                max-width: 100%;
+            }
+            .top-banner p{
+                max-width: 100%;
+            }
+           .hero-container{
+                max-width: 100%;
+                text-align: left;
+           }
+           .hero-content h2{
+                max-width: 100%;
+                font-size: 2.5rem;  
+           }
+           .subtitle{
+                max-width: 100%;
+           }
+           .hero-features{
+                display: block;
+                gap: 10px;
+                margin-top: 1.5rem;
+           }
+           .hero-feature{
+               display: flex;
+               margin-bottom: 1.1rem;
+               max-width: 100%;
+            }
+            .feature-text p{
+             max-width: 100%;
+            }
+           .hero-buttons{
+            display: block;
+           }
+           .btn{
+            margin-top: 1rem;
+            padding: 1rem;
+            font-size: 1rem;
+           }
+           .hero-content{
+            display: block;
+           }
+           .badge-container{
+            display: block;
+            gap: 2rem;
+           }
+           .hero-container{
+            display: block;
+           }
+           .hero-features{
+            gap: 12rem;
+           }
+           .badge{
+            max-width: 100%;
+            margin: 1rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+           }
+           .badge h3 p{
+            max-width: 50%;
+           }
+           .badge-container{
+            margin-right: 3rem;
+           }
+           .story-container{
+            display: flex;
+            flex-direction: column-reverse;
+            }
+            .story-content h2 p{
+                max-width: 100%;
+            }
+            .story-content h2{
+                font-size: 2.5rem;
+                max-width: 100%;
+            }
+            .story-content p{
+                max-width: 100%;
+            }
+           .story-image-grid{
+            display: block;
+           }
+           .story-img{
+                margin-bottom: 1.1rem;
+                padding: 2rem;
+           }
+           .story-stats{
+            display: block;
+            margin: 0;
+            padding: 1rem;
+            align-self: center;
+           }
+           .stat-box{
+            margin: 1rem;
+            padding: 2rem;
+           }
+           .products-showcase{
+            display: block;
+           }
+           .product-item{
+            margin-bottom: 1.1rem;
+           }
+           .testimonials-grid{
+            display: block;
+           }
+           .testimonial-card{
+            margin-bottom: 1.1rem;
+           }
+           .contact-wrapper{
+            display: block;
+           }
+           .contact-form{
+            display: none;
+           }
+           .contact-item{
+            display: block;
+           }
+           .footer-container{
+            display: block;
+           }
+           .footer-links{
+            margin-top: 2rem;
+           }
+        }
+        .toggleButton{
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .toggleButton .bar{
+            width: 30px;
+            height: 4px;
+            border-radius: 5px;
+            background-color: #000;
+            margin: 3px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+       <p>🌾 FRESH FROM OUR FARM TO YOUR TABLE - ORDER NOW & GET 15% OFF 🌾</p>
+    </div>
+
+    <nav>
+        <div class="brand">
+            <div class="brand-logo">🐓</div>
+            <div class="brand-text">
+                <h1>Godeila Farm</h1>
+                <p>Premium Poultry Since 2010</p>
+            </div>
+        </div>
+        <div class="toggleButton" id="toggleButton">
+           <div class="bar"></div>
+           <div class="bar"></div>
+           <div class="bar"></div>
+        </div>
+        <ul class="nav-menu" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2>Farm Fresh Poultry, Naturally Raised</h2>
+                <p class="subtitle">Experience the authentic taste of premium quality chicken and eggs, raised with love and care on our sustainable farm.</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <span>✓</span>
+                        <span class="feature-text"><p>100% Natural</p></span>
+                    </div>
+                    <div class="hero-feature">
+                        <span>✓</span>
+                        <span class="feature-text"><p>Free Range</p></span>
+                    </div>
+                    <div class="hero-feature">
+                        <span>✓</span>
+                        <span class="feature-text"><p>Hormone Free</p></span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Shop Now</a>
+                    <a href="#story" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="badge-container">
+                    <div class="badge">
+                        <div class="badge-icon">🏆</div>
+                        <h3>Award Winning</h3>
+                        <p>Best Quality 2024</p>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">🌱</div>
+                        <h3>Organic Certified</h3>
+                        <p>100% Natural Feed</p>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">🚚</div>
+                        <h3>Fast Delivery</h3>
+                        <p>Same Day Service</p>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">💚</div>
+                        <h3>Eco Friendly</h3>
+                        <p>Sustainable Farming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="story-container">
+            <div class="story-image-grid">
+                <div class="story-img"><img src="Pictures/Chicken_bg.png" alt="" height="200px" style="object-fit: cover; border-radius: 10px;"></div>
+                <div class="story-img"><img src="./Pictures/Bulk Order.png" alt="image"  height="200px" style="object-fit: cover; border-radius: 10px;"></div>
+                <div class="story-img"><img src="./Pictures/Egg_Crate.png" alt="image"  height="200px" style="object-fit: cover; border-radius: 10px;"></div>
+                <div class="story-img"><img src="./Pictures/Fertilizer.png" alt="image"  height="200px" style="object-fit: cover; border-radius: 10px;"></div>
+            </div>
+            <div class="story-content">
+                <div class="section-label">Our Story</div>
+                <h2>Tradition Meets Excellence</h2>
+                <p>For over 15 years, Godeila Farm has been dedicated to providing families with the freshest, healthiest poultry products. Our commitment to sustainable farming practices and animal welfare ensures that every product meets the highest standards of quality.</p>
+                <p>We believe in doing things the right way - giving our chickens space to roam, natural feed without hormones or antibiotics, and the care they deserve. The result? Premium quality that you can taste.</p>
+                <div class="story-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="section-header">
+            <div class="section-label">Our Products</div>
+            <h2>Premium Quality Selection</h2>
+            <p>Explore our range of fresh, farm-raised poultry products. Each item is carefully selected and prepared to deliver exceptional taste and nutrition.</p>
+        </div>
+        <div class="products-showcase">
+            <div class="product-item">
+                <div class="product-img"><img src="Pictures/Whole chicken.png" alt="Image" height="250px" style= "border-radius: 30px;"></div>
+                <div class="product-details">
+                    <span class="product-tag">BEST SELLER</span>
+                    <h3>Whole Chicken</h3>
+                    <p>Premium</p>
+                </div>
+            </div> 
+            <div class="product-item">
+                <div class="product-img"><img src="Pictures/How to Cut Chicken Wings.jpeg" alt="Image" height="250px" style= "border-radius: 30px;"></div>
+                <div class="product-details">
+                    <span class="product-tag">BEST SELLER</span>
+                    <h3>Chicken Parts</h3>
+                    <p>Premium</p>
+                </div>
+            </div> 
+            <div class="product-item">
+                <div class="product-img"><img src="../Pictures/converted_image.png" alt="Image" height="250px" style= "border-radius: 30px;"></div>
+                <div class="product-details">
+                    <span class="product-tag">BEST SELLER</span>
+                    <h3>Fresh Eggs</h3>
+                    <p>Premium </p>
+                </div>
+            </div>  
+            <div class="product-item">
+                <div class="product-img"><img src="Pictures/Bulk Order.png" alt="Image" height="250px" style= "border-radius: 30px;"></div>  
+                <div class="product-details">
+                    <span class="product-tag">5% DISCOUNT</span>
+                    <h3>Bulk Orders</h3>
+                    <p>Special </p>
+                </div>
+            </div>      
+        </div>
+    </section>
+    <section class="testimonials" id="testimonials">
+        <h2>
+            Our Reviews
+        </h2>
+        <div class="testimonials-container">
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-author">
+                        <span class="author-avatar">👤</span>
+                    </div>
+                    <br>
+                    <div class="author-info">
+                        <p>Nwabueze Nelson</p>
+                    </div>
+                    <br>
+                    <h3 class="testimonial-text">Very convenient services, I love to enjoy products at the comfort of my home. Highly recomended</h3>
+                    <div class="testimonial-stars">
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                    </div>
+                </div>
+
+               <div class="testimonial-card">
+                    <div class="testimonial-author">
+                        <span class="author-avatar">👤</span>
+                    </div>
+                    <br>
+                    <div class="author-info">
+                        <p>Okolo Godwin</p>
+                    </div>
+                    <br>
+                    <h3 class="testimonial-text">My Go-to Whenever I need fresh whole chicken at the best price, I do not miss Christmas without Specially wrapped whole 
+                        chicken from Godeila Farm, Thank you!!
+                    </h3>
+                    <div class="testimonial-stars">
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-author">
+                        <span class="author-avatar">👤</span>
+                    </div>
+                    <br>
+                    <div class="author-info">
+                        <p>Treasure Mbah</p>
+                    </div>
+                    <br>
+                    <h3 class="testimonial-text">I usually go to local Market to get all I need for my bakery business, Mostly Fresh eggs but 
+                        I decided to work with Godeila farm, they dont disappoint,with my phone and a few clicks, I get what I need at my doorstep.
+                    </h3>
+                    <div class="testimonial-stars">
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                        <p>⭐</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>We are at your Service!</p>
+            </div>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <div class="contact-item-text">
+                        <h4>Email</h4>
+                        <p>Godeilaprojectlimited1@gmail.com</p>
+                    </div>
+                    <br>
+                    <div class="contact-item-text">
+                        <h4>Instagram</h4>
+                        <p>@sheila_bangz</p>
+                    </div>
+                    <br>
+                    <div class="contact-item-text">
+                        <h4>Whatsapp</h4>
+                        <p>08138749002</p>
+                    </div>
+                </div>
+                <div class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="number" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Message">Message</label>
+                            <textarea name="Message" id="Message"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Godeila Farm</h3>
+                <p>Premuim Poultry Since 2010</p>
+            </div>
+            <div class="social-icons">
+                <div class="social-icon">
+                    <span>💬</span>
+                </div>
+                <div class="social-icon">
+                    <span>📩</span>
+                </div>
+                <div class="social-icon">
+                    <span>📞</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Useful Links</h4>
+                <div class="Links-container">
+                    <div>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Whatsapp</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="page-links">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#stoty">Our Story</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#products">Products</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#testimonials">Reviews</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 GodielaProjectLimited.All rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // // Form submission
+         const contactForm = document.getElementById('contactForm');
+         contactForm.addEventListener('submit', (e) => {
+             e.preventDefault();
+             alert('Thank you for your message! We will get back to you soon.');
+          contactForm.reset();
+            });
+
+        var contactForm1 = document.getElementById('contactForm')
+        contactForm.addEventListener('submit', (e) =>{
+            e.preventDefault();
+            alert('We will respond soon!!');
+            contactForm.reset();
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        // toggleButton
+        let toggleButton = document.getElementById('toggleButton');
+        let navLinks = document.getElementById('navLinks');
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });                      
+    </script>
+</body>
